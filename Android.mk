@@ -13,7 +13,6 @@ LOCAL_PACKAGE_NAME := JNSIME
 LOCAL_CERTIFICATE := platform
 LOCAL_JNI_SHARED_LIBRARIES := libjnskey libjnsmotion libjnsacc
 include $(BUILD_PACKAGE)
-
 # Use the folloing include to make our test apk.
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
