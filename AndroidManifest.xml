@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.blueocean.ime"
+      android:versionCode="4"
+      android:versionName="1.4"
+      android:sharedUserId="android.uid.system"> 
+      
+    <uses-feature android:name="android.hardware.usb.host" />
+    
+    <uses-sdk android:minSdkVersion="14"/>
+
+	<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+    	<service android:name="BlueoceanInputMethodService"
+    			 android:permission="android.permission.BIND_INPUT_METHOD">
+    		<intent-filter>
+    			<action android:name="android.view.InputMethod"/>
+    		</intent-filter>		 
+    		<meta-data android:name="android.view.im" android:resource="@xml/method"/>
+    	</service>
+    	<service android:name=".BlueoceanCore">
+    		<intent-filter> 
+    			<action android:name="com.blueocean.ime.blueoceancore"/>
+    		</intent-filter>
+    	</service>
+    	<service android:name="com.blueocean.HID.BlueoceanHIDService">
+    	    <intent-filter >
+    	        <action android:name="com.blueocean.hid.BlueoceanHIDService"/>
+    	    </intent-filter>
+    	</service>
+    	<!-- Receiver -->
+    	<receiver android:name=".BlueoceanSwitchIMEBroadcast">
+        	<intent-filter>
+        		<action android:name="COM.BLUEOCEAN_IME_SWITCH_IME"/>
+        	</intent-filter>
+        </receiver>
+        <receiver android:name=".BlueoceanSystemBootBroadcast">
+        	<intent-filter>
+        		<action android:name="android.intent.action.BOOT_COMPLETED" /> 
+        		<category android:name="android.intent.category.HOME" />
+        	</intent-filter>
+        </receiver>
+        <!-- Activity -->
+        <activity android:name=".BlueoceanIMEActivity"
+        		  android:theme="@android:style/Theme.NoTitleBar"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+		<activity android:name=".BlueoceanControllerActivity">
+			<intent-filter>
+				<action android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity android:name=".BlueoceanTPActivity">
+			<intent-filter>
+				<action android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity android:name=".BlueoceanSettingsActivity">
+			<intent-filter>
+				<action android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity android:name=".BlueoceanAdvanceActivity">
+			<intent-filter>
+				<action android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity android:name=".BlueoceanTpConfigActivity"
+				android:theme="@style/screen_activity">
+			<intent-filter>
+				<action android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+    </application>
+</manifest>

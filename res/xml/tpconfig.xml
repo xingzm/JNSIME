@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/tpconfig">
+	<PreferenceCategory android:key="@string/load_files_key"
+                                        android:title="@string/load_files">
+                <ListPreference android:key="@string/list_load_files_key" 
+                                        android:title="@string/list_load_files"
+                                        android:summary="@string/unknown"/>
+        </PreferenceCategory>>
+        <PreferenceCategory android:title="@string/del_touch_file">
+                <ListPreference android:key="@string/list_del_touch_file"
+                                                android:title="@string/list_del_touch_file"/>
+        </PreferenceCategory>
+<!--
+        <PreferenceCategory android:title="@string/set_ime">
+                <Preference android:key="@string/select_ime" 
+                                        android:title="@string/select_ime"
+                                        android:summary="@string/select_ime_info"/>
+        </PreferenceCategory>
+-->
+</PreferenceScreen>

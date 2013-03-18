@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/preference_title"> 
+	<PreferenceCategory  android:title="@string/acceleration_dir_title">
+		<ListPreference android:key="@string/acceleration_dir_title" 
+        	android:title="@string/acceleration_dir_title"
+        	android:entries="@array/acceleration_orientation_entries"
+        	android:entryValues="@array/acceleration_orientation_value"
+            android:summary="@string/unknown"/>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/acceleration_sensitivity_title">
+		<ListPreference android:key="@string/acceleration_sensitivity_title"
+			android:title="@string/acceleration_sensitivity_title" 
+        	android:entries="@array/acceleration_sensitivity_entries"
+        	android:entryValues="@array/acceleration_sensitivity_value"
+            android:summary="@string/unknown"/>
+    </PreferenceCategory>
+<!--     <PreferenceCategory android:title="@string/acceleration_simulation_enable_title"> -->
+<!--     	<CheckBoxPreference android:key="@string/acceleration_simulation_enable_title" -->
+<!--     		android:title="@string/acceleration_simulation_enable_title" -->
+<!--     		android:summary="@string/acceleration_simulation_enable_summary"/> -->
+<!--     </PreferenceCategory> -->
+</PreferenceScreen>

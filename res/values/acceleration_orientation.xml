@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="acceleration_orientation_entries">
+		<item>0   Degree</item>
+		<item>90  Degree</item>
+		<item>180 Degree</item>
+		<item>270 Degree</item>
+		<item>360 Degree</item>
+	</string-array>
+	<string-array name="acceleration_orientation_value">
+		<item>0</item>
+		<item>90</item>
+		<item>180</item>
+		<item>270</item>
+		<item>360</item>
+	</string-array>
+</resources>
